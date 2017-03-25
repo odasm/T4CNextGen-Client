@@ -2747,11 +2747,11 @@ void InitializeTFCData(void)
      World.SetVirtualDimension(256,  256);
      World.SetWorldDimension  (3072, 3072);
      World.SetNumberofWorld   (4);	//Was set to 4 // steph 4 au lieu de 8
-     //World.SetWorldFileName   ("Game Files\\V2_WorldMap.Map"); // steph désactivation
+     World.SetWorldFileName   ("Game Files\\V2_WorldMap.Map"); // steph désactivation
      World.SetWorldFileName   ("Game Files\\V2_DungeonMap.Map");
      World.SetWorldFileName   ("Game Files\\V2_CavernMap.Map");
      World.SetWorldFileName   ("Game Files\\V2_Underworld.Map");
-     World.SetWorldFileName   ("Game Files\\V2_LeoWorld.Map");	//New map by Leo for Dialsoft
+     //World.SetWorldFileName   ("Game Files\\V2_LeoWorld.Map");	//New map by Leo for Dialsoft
      //World.SetWorldFileName   ("Game Files\\V2_Extension01.Map");	
      //World.SetWorldFileName   ("Game Files\\V2_Extension02.Map");	
      //World.SetWorldFileName   ("Game Files\\V2_Extension03.Map");	

@@ -6,6 +6,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T4C Client", "T4C Client\T4
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T4CLauncher", "T4CLauncher\T4CLauncher.vcxproj", "{DED87139-2B5B-44FB-BA8B-E195DFD0E904}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F4BDC60-4969-4599-95EA-A2C097C90C57}"
+	ProjectSection(SolutionItems) = preProject
+		WebPatch.tlh = WebPatch.tlh
+		WebPatch.tli = WebPatch.tli
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Maison|x86 = Debug Maison|x86

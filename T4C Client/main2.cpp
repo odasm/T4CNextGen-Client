@@ -15,7 +15,6 @@
 // Number used to enable Debug
 #define MAGIC_DEBUG_NUMBER   8030
 
-//#import "WebPatch.Exe" // DaP
 
 // Include Files
 #include <windows.h>
@@ -95,6 +94,8 @@
 
 #include "XpStat.h"
 #include "PvpRanking.h"
+
+#import "webpatch.exe"
 
 // Scotch: Server history vars
 std::vector<std::string>vServerHistory;
@@ -226,7 +227,7 @@ BOOL DecriptVSB(BOOL, int);
 DWORD GetThreadTime(HANDLE);
 void ParseText(char *pText);
 
-//void WebPatchUpdate(char *, char *, char *, char *, DWORD);
+void WebPatchUpdate(char *, char *, char *, char *, DWORD);
 
 BOOL Save = FALSE;
 BOOL Only = FALSE;
@@ -1236,7 +1237,7 @@ static long FAR PASCAL WindowMessageInput(
 
 void CALLBACK TimerFunc( UINT nID, UINT uMsg, DWORD dwUser, DWORD dw1, DWORD d2);
 
-//using namespace WEBPATCHLib;
+using namespace WEBPATCHLib;
 bool g_WebPatchSuccess = false;
 
 
@@ -1285,14 +1286,10 @@ int WINAPI WinMain
 	
 	//Custom.Debug = true; //BLBLBL 26 mars : mode débug activé.
 	
-	//NMNMNM
-	//Custom.gWebPatchEnabled = true;//pConfig->WebpatchEnable;        
-	//Custom.gWebPatchEnabled = false;//pConfig->WebpatchEnable;        
-	
 #ifdef _DEBUG
 	Custom.gWebPatchEnabled = false;//pConfig->WebpatchEnable;        
-#else
-	Custom.gWebPatchEnabled = true;//pConfig->WebpatchEnable;        
+#else	//Disable webpatching for public builds @PoPo
+	Custom.gWebPatchEnabled = false;//pConfig->WebpatchEnable;        
 #endif
 	
 	//Custom.gWebPatchEnabled = false;
@@ -1464,7 +1461,7 @@ bool CreateWnd ( void )
 	
 	hWnd = CreateWindow ( 
 		"AppClass", // Window Class Name
-		"T4C Rebirth 1.68V2 (16 fps)", // Application Name // steph T4C Rebirth 1.68V2 (16fps) au lieu de The 4th Coming
+		"The 4th Coming: Next Generation 1.68V2", // Application Name // steph T4C Rebirth 1.68V2 (16fps) au lieu de The 4th Coming
 		WS_POPUP,// | WS_MAXIMIZE, // Style
 		(GetSystemMetrics(SM_CXSCREEN)-g_Global.GetScreenW())/2, // left
 		(GetSystemMetrics(SM_CYSCREEN)-g_Global.GetScreenH())/2, // top
@@ -1760,61 +1757,61 @@ UINT WINAPI SocketFunction(LPVOID pParam)
 						g_GUILocalString.Create();
 					*/
 					
-					//try 
-					//{      
-					//	IWebPatchPtr lpWebPatch(__uuidof(WebPatch));
-					//} 
-					//catch (_com_error e) 
-					//{
-					//	
-					//	char szFullPath[256];
-					//	char szDownloadDir[256];
-					//	char szAppDir[256];
-					//	char szFrom[256];
-					//	char szTo[256];
-					//	char szAppName[256];
-					//	
-					//	GetModuleFileName(NULL, szFullPath, 256);      
-					//	strcpy(szAppDir, szFullPath);
-					//	for(int i = strlen(szAppDir)-1; i > 0; i--) 
-					//	{
-					//		if (szAppDir[i] == '\\') 
-					//		{
-					//			szAppDir[i] = NULL;
-					//			strcpy(szAppName, szAppDir+i+1);
-					//			i = 0;
-					//		}
-					//	}
-					//	strcpy(szDownloadDir, szAppDir);
-					//	strcat(szDownloadDir, "\\Download");
-					//	
-					//	strcpy(szFrom, szDownloadDir);
-					//	strcat(szFrom, "\\Webpatch.Exe");
-					//	
-					//	strcpy(szTo, szAppDir);
-					//	strcat(szTo, "\\Webpatch.Exe");
-					//	
-					//	int i = 0;
-					//	OutputDebugString("\r\n\nCOPY WEB PATCH: ");
-					//	sprintf(g_strGeneralMessage,g_GUILocalString[132]);
-					//	
-					//	OutputDebugString(szFrom);
-					//	OutputDebugString(", ");
-					//	OutputDebugString(szTo);
-					//	OutputDebugString("\r\n\n");
-					//	while (!CopyFile(szFrom, szTo, FALSE) && i < 80 ) {
-					//		Sleep(250);//BLBLBL huh ? 250 ?
-					//		i++;
-					//	}
-					//	ShellExecute(siGethWnd(), "open", "webpatch.exe", "-regserver", "",SW_HIDE);
-					//	Sleep(500);
-					//}
-					//if (g_boQuitApp) 
-					//{
-					//	DlgState = 6;
-					//	return 1;
-					//}
-					//
+					try 
+					{      
+						IWebPatchPtr lpWebPatch(__uuidof(WebPatch));
+					} 
+					catch (_com_error e) 
+					{
+						
+						char szFullPath[256];
+						char szDownloadDir[256];
+						char szAppDir[256];
+						char szFrom[256];
+						char szTo[256];
+						char szAppName[256];
+						
+						GetModuleFileName(NULL, szFullPath, 256);      
+						strcpy(szAppDir, szFullPath);
+						for(int i = strlen(szAppDir)-1; i > 0; i--) 
+						{
+							if (szAppDir[i] == '\\') 
+							{
+								szAppDir[i] = NULL;
+								strcpy(szAppName, szAppDir+i+1);
+								i = 0;
+							}
+						}
+						strcpy(szDownloadDir, szAppDir);
+						strcat(szDownloadDir, "\\Download");
+						
+						strcpy(szFrom, szDownloadDir);
+						strcat(szFrom, "\\Webpatch.Exe");
+						
+						strcpy(szTo, szAppDir);
+						strcat(szTo, "\\Webpatch.Exe");
+						
+						int i = 0;
+						OutputDebugString("\r\n\nCOPY WEB PATCH: ");
+						sprintf(g_strGeneralMessage,g_GUILocalString[132]);
+						
+						OutputDebugString(szFrom);
+						OutputDebugString(", ");
+						OutputDebugString(szTo);
+						OutputDebugString("\r\n\n");
+						while (!CopyFile(szFrom, szTo, FALSE) && i < 80 ) {
+							Sleep(250);//BLBLBL huh ? 250 ?
+							i++;
+						}
+						ShellExecute(siGethWnd(), "open", "webpatch.exe", "-regserver", "",SW_HIDE);
+						Sleep(500);
+					}
+					if (g_boQuitApp) 
+					{
+						DlgState = 6;
+						return 1;
+					}
+					
 					TFCPacket Send;
 					Send.SetPacketSeedID(99999);
 					
@@ -1842,7 +1839,7 @@ UINT WINAPI SocketFunction(LPVOID pParam)
 						{ // Account registred
 							if ( Custom.gWebPatchEnabled ) 
 							{
-								//WebPatchUpdate(g_lpszPath, g_lpszIP, g_lpszUser, g_lpszPassword, g_dwVersion);
+								WebPatchUpdate(g_lpszPath, g_lpszIP, g_lpszUser, g_lpszPassword, g_dwVersion);
 							}
 							if (g_boQuitApp) 
 							{
@@ -3447,284 +3444,286 @@ void ParseText(char *pText)
      } 
      strText[0] = 0;
 }
-//
-////Fonction de webpatch, qui merde sous Vista :
-//void WebPatchUpdate(char *lpszPath, char *lpszIP, char *lpszUser, char *lpszPassword, 
-//                    DWORD dwVersion) {
-//    
-//	try {
-//		// Webpatch Update.
-//		
-//		BOOL bWebPatchUpdate = FALSE;
-//		
-//		BSTR lpszFileList;
-//		long lProcID;
-//		
-//		// Webpatch Setup
-//		char szFullPath[MAX_PATH];
-//		char szAppDir[MAX_PATH];
-//		char szAppName[MAX_PATH];
-//		char szDownloadDir[256];
-//		
-//		wchar_t szPatchDir[256];
-//		
-//		DWORD dwExitCode;
-//		
-//		// Get the Full Module Path
-//		GetModuleFileName(NULL, szFullPath, MAX_PATH);      
-//		
-//		// Get the Application Directory
-//		strcpy(szAppDir, szFullPath);
-//		for(int i = strlen(szAppDir)-1; i > 0; i--) {
-//			if (szAppDir[i] == '\\') {
-//				szAppDir[i] = NULL;
-//				strcpy(szAppName, szAppDir+i+1);
-//				i = 0;
-//			}
-//		}
-//		
-//		// Get the Download Directory
-//		strcpy(szDownloadDir, szAppDir);
-//		strcat(szDownloadDir, "/Download");
-//		
-//		{
-//			// Setup WebPatch
-//			IWebPatchPtr lpWebPatch(__uuidof(WebPatch));
-//			wchar_t Temp[MAX_PATH];
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(szAppName, Temp);
-//			lpWebPatch->appID             = Temp;
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(szAppDir, Temp);
-//			lpWebPatch->appDirectory      = Temp;
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(szDownloadDir, Temp);
-//			lpWebPatch->downloadDirectory = Temp;
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(lpszPath, Temp);
-//			lpWebPatch->imagePath         = Temp;
-//			LOG << "* WEB = " << lpszPath << "\r\n";
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(ServerIP, Temp);
-//			lpWebPatch->referer           = Temp;
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(lpszIP, Temp);
-//			lpWebPatch->url               = Temp;
-//			LOG << "* WEB = " << lpszIP << "\r\n";
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(lpszUser, Temp);
-//			lpWebPatch->userName          = Temp;
-//			
-//			ZeroMemory(Temp, MAX_PATH*2);
-//			vir::AnsiToUnicode()(lpszPassword, Temp);
-//			lpWebPatch->userPassword      = Temp;
-//			
-//			if (Custom.Debug) {
-//				vir::AnsiToUnicode()("WebPatchDebug.Log", Temp);
-//				lpWebPatch->logFile = Temp;
-//			}
-//			
-//			wcscpy(szPatchDir, lpWebPatch->webPatchDirectory);
-//			lProcID = lpWebPatch->processID;
-//			
-//			if( lpWebPatch->NewWebPatchNeeded(&lpszFileList)){
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDC_COMBO1), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, ACCOUNT), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, PASSWORD), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDC_SAVE), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDC_WINDOWED), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDC_GRAPH), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDC_INFO), FALSE);
-//				EnableWindow(GetDlgItem(GlobalHwnd, IDCANCEL), FALSE);
-//				InvalidateRect(GlobalHwnd, NULL, FALSE);
-//				UpdateWindow(GlobalHwnd);
-//				bWebPatchUpdate = TRUE;
-//			} else {
-//				
-//				// If a patch is needed
-//				if( lpWebPatch->PatchNeeded( Player.Version, dwVersion ) ) 
-//				{
-//					// Send exit packet.                
-//					TFCPacket sending;
-//					sending << (RQ_SIZE)RQ_ExitGame;
-//					
-//					SEND_PACKET( sending );
-//					Sleep( 500 );
-//					
-//					if (!g_WebPatchSuccess) 
-//					{
-//						char szRestartApp[256];
-//						strcpy(szRestartApp, szAppDir);
-//						strcat(szRestartApp, "\\T4C.EXE");
-//						//                  lpWebPatch->StartPatch( GetCurrentProcessId(), szFullPath, szAppDir, "WebPatch Success", "WebPatch Cancel", Player.Version, dwVersion );
-//						char szTemp[1000];
-//						sprintf(szTemp, "WebPatch Success %s", szCopyCmdLine);
-//						lpWebPatch->StartPatch( GetCurrentProcessId(), szRestartApp, szAppDir, szTemp, "WebPatch Cancel", Player.Version, dwVersion );
-//						g_App.Close(g_LocalString[408]);
-//					} 
-//					else 
-//					{
-//						lpWebPatch->WriteErrorReport("WebPatch.Log");
-//						MessageBox(siGethWnd(), g_LocalString[409], g_LocalString[410], MB_OK);
-//						g_App.Close(g_LocalString[409]);
-//					}
-//					
-//				}
-//				
-//				// Flush the download directory
-//				
-//				///////////////////////////////
-//				// !OPTIONAL!
-//				//BSTR moduleList;
-//				//lpWebPatch->GetModuleList( &moduleList );
-//				
-//				//SysFreeString( moduleList )
-//				
-//				//lpWebPatch->DownloadModule(L"Module Name", true)
-//			}
-//			
-//			lProcID = lpWebPatch->processID;
-//      }
-//      
-//      // SHUTDOWN WEBPATCH
-//      int iErrorCode=0;//BLBL 29 mars 2009 initialisation de la variable à 0
-//      int i = 0;
-//      if (bWebPatchUpdate) {
-//		  HANDLE hP = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, lProcID);
-//		  GetExitCodeProcess(hP, &dwExitCode);
-//		  while (dwExitCode == STILL_ACTIVE && i < 80) {
-//			  iErrorCode = GetLastError();
-//			  TerminateProcess(hP, 0);
-//			  Sleep(250);
-//			  GetExitCodeProcess(hP, &dwExitCode);
-//			  i++;
-//		  }
-//      }
-//      
-//      if (i >= 80) {
-//		  char Temp[1000];
-//		  LPVOID lpMsgBuf;
-//		  
-//		  FormatMessage( 
-//			  FORMAT_MESSAGE_ALLOCATE_BUFFER | 
-//			  FORMAT_MESSAGE_FROM_SYSTEM | 
-//			  FORMAT_MESSAGE_IGNORE_INSERTS,
-//			  NULL,
-//			  iErrorCode,
-//			  MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
-//			  (LPTSTR) &lpMsgBuf,
-//			  0,
-//			  NULL 
-//			  );
-//		  
-//		  sprintf(Temp, g_LocalString[411], (LPCTSTR)lpMsgBuf);
-//		  MessageBox(siGethWnd(), Temp, g_LocalString[410], MB_OK);
-//		  
-//		  LocalFree( lpMsgBuf );                              
-//		  g_App.Close(Temp);
-//      }
-//	  
-//      if (bWebPatchUpdate) {
-//		  // Copy files in the Download directory to the directory
-//		  // specified by lpWebPatch->webPatchDirectory
-//          
-//		  wchar_t szFrom[256];
-//		  wchar_t szTo[256];
-//		  wchar_t *szFileName;
-//		  wchar_t *szTemp;
-//		  
-//		  szTemp = wcstok(lpszFileList, L"|");
-//		  while (szTemp) {
-//			  
-//			  wcscpy(szFrom, szTemp);
-//			  
-//			  for (int i = wcslen(szTemp); i > 0; i--) {
-//				  if (szTemp[i] == L'\\') {
-//					  szFileName = szTemp+i+1;
-//					  i = 0;
-//				  }
-//			  }
-//			  
-//			  wcscpy(szTo, szPatchDir);
-//			  wcscat(szTo, szFileName);
-//			  
-//			  char szFromA[1000];
-//			  char szToA[1000];
-//			  
-//			  ZeroMemory(szFromA,  1000);
-//			  ZeroMemory(szToA,  1000);
-//			  vir::UnicodeToAnsi()(szFrom, szFromA);
-//			  vir::UnicodeToAnsi()(szTo, szToA);
-//			  
-//			  i = 0; 
-//			  while (!CopyFile(szFromA, szToA, FALSE) && i < 80 ) {
-//				  iErrorCode = GetLastError();
-//				  Sleep(250);
-//				  i++;
-//			  }
-//			  Sleep(1000);
-//			  DeleteFileW(szFrom);
-//			  
-//			  if (i >= 80) {
-//				  char Temp[1000];
-//				  LPVOID lpMsgBuf;
-//				  
-//				  ZeroMemory(Temp,  1000);	
-//				  
-//				  FormatMessage( 
-//					  FORMAT_MESSAGE_ALLOCATE_BUFFER | 
-//					  FORMAT_MESSAGE_FROM_SYSTEM | 
-//					  FORMAT_MESSAGE_IGNORE_INSERTS,
-//					  NULL,
-//					  iErrorCode,
-//					  MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
-//					  (LPTSTR) &lpMsgBuf,
-//					  0,
-//					  NULL 
-//					  );
-//				  
-//				  sprintf(Temp, g_LocalString[412], szFromA, szToA, (LPCTSTR)lpMsgBuf);
-//				  MessageBox(siGethWnd(), Temp, g_LocalString[410], MB_OK);
-//				  
-//				  LocalFree( lpMsgBuf );                              
-//				  g_App.Close(Temp);
-//			  }
-//			  
-//			  szTemp = wcstok(NULL, L"|");
-//		  }
-//		  
-//		  ShellExecute(siGethWnd(), "open", "webpatch.exe", "-regserver", "", SW_HIDE);
-//		  Sleep(500);
-//		  
-//		  if (!g_boQuitApp) {
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDC_COMBO1), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, ACCOUNT), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, PASSWORD), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDC_SAVE), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDC_GRAPH), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDC_WINDOWED), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDC_INFO), TRUE);
-//			  EnableWindow(GetDlgItem(GlobalHwnd, IDCANCEL), TRUE);
-//			  InvalidateRect(GlobalHwnd, NULL, FALSE);
-//			  UpdateWindow(GlobalHwnd);
-//			  WebPatchUpdate(lpszPath, lpszIP, lpszUser, lpszPassword, dwVersion);
-//		  }
-//      }
-//   } catch (_com_error e) {
-//	   char Temp[1000];
-//	   sprintf(Temp, g_LocalString[413], e.ErrorMessage());
-//	   MessageBox(siGethWnd(), Temp, "Webpatch error", MB_OK);
-//	   MessageBox(siGethWnd(), "Please run T4C in Administrator mode to solve this issue.", "Webpatch error", MB_OK);
-//	   g_App.Close(Temp);
-//   }
-//}
+
+//Fonction de webpatch, qui merde sous Vista :
+void WebPatchUpdate(char *lpszPath, char *lpszIP, char *lpszUser, char *lpszPassword,
+	DWORD dwVersion) {
+
+	try {
+		// Webpatch Update.
+
+		BOOL bWebPatchUpdate = FALSE;
+
+		BSTR lpszFileList;
+		long lProcID;
+
+		// Webpatch Setup
+		char szFullPath[MAX_PATH];
+		char szAppDir[MAX_PATH];
+		char szAppName[MAX_PATH];
+		char szDownloadDir[256];
+
+		wchar_t szPatchDir[256];
+
+		DWORD dwExitCode;
+
+		// Get the Full Module Path
+		GetModuleFileName(NULL, szFullPath, MAX_PATH);
+
+		// Get the Application Directory
+		strcpy(szAppDir, szFullPath);
+		for (int i = strlen(szAppDir) - 1; i > 0; i--) {
+			if (szAppDir[i] == '\\') {
+				szAppDir[i] = NULL;
+				strcpy(szAppName, szAppDir + i + 1);
+				i = 0;
+			}
+		}
+
+		// Get the Download Directory
+		strcpy(szDownloadDir, szAppDir);
+		strcat(szDownloadDir, "/Download");
+
+		{
+			// Setup WebPatch
+			IWebPatchPtr lpWebPatch(__uuidof(WebPatch));
+			wchar_t Temp[MAX_PATH];
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(szAppName, Temp);
+			lpWebPatch->appID = Temp;
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(szAppDir, Temp);
+			lpWebPatch->appDirectory = Temp;
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(szDownloadDir, Temp);
+			lpWebPatch->downloadDirectory = Temp;
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(lpszPath, Temp);
+			lpWebPatch->imagePath = Temp;
+			LOG << "* WEB = " << lpszPath << "\r\n";
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(ServerIP, Temp);
+			lpWebPatch->referer = Temp;
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(lpszIP, Temp);
+			lpWebPatch->url = Temp;
+			LOG << "* WEB = " << lpszIP << "\r\n";
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(lpszUser, Temp);
+			lpWebPatch->userName = Temp;
+
+			ZeroMemory(Temp, MAX_PATH * 2);
+			vir::AnsiToUnicode()(lpszPassword, Temp);
+			lpWebPatch->userPassword = Temp;
+
+			if (Custom.Debug) {
+				vir::AnsiToUnicode()("WebPatchDebug.Log", Temp);
+				lpWebPatch->logFile = Temp;
+			}
+
+			wcscpy(szPatchDir, lpWebPatch->webPatchDirectory);
+			lProcID = lpWebPatch->processID;
+
+			if (lpWebPatch->NewWebPatchNeeded(&lpszFileList)) {
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_COMBO1), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, ACCOUNT), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, PASSWORD), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_SAVE), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_WINDOWED), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_GRAPH), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_INFO), FALSE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDCANCEL), FALSE);
+				InvalidateRect(GlobalHwnd, NULL, FALSE);
+				UpdateWindow(GlobalHwnd);
+				bWebPatchUpdate = TRUE;
+			}
+			else {
+
+				// If a patch is needed
+				if (lpWebPatch->PatchNeeded(Player.Version, dwVersion))
+				{
+					// Send exit packet.                
+					TFCPacket sending;
+					sending << (RQ_SIZE)RQ_ExitGame;
+
+					SEND_PACKET(sending);
+					Sleep(500);
+
+					if (!g_WebPatchSuccess)
+					{
+						char szRestartApp[256];
+						strcpy(szRestartApp, szAppDir);
+						strcat(szRestartApp, "\\T4C.EXE");
+						//                  lpWebPatch->StartPatch( GetCurrentProcessId(), szFullPath, szAppDir, "WebPatch Success", "WebPatch Cancel", Player.Version, dwVersion );
+						char szTemp[1000];
+						sprintf(szTemp, "WebPatch Success %s", szCopyCmdLine);
+						lpWebPatch->StartPatch(GetCurrentProcessId(), szRestartApp, szAppDir, szTemp, "WebPatch Cancel", Player.Version, dwVersion);
+						g_App.Close(g_LocalString[408]);
+					}
+					else
+					{
+						lpWebPatch->WriteErrorReport("WebPatch.Log");
+						MessageBox(siGethWnd(), g_LocalString[409], g_LocalString[410], MB_OK);
+						g_App.Close(g_LocalString[409]);
+					}
+
+				}
+
+				// Flush the download directory
+
+				///////////////////////////////
+				// !OPTIONAL!
+				//BSTR moduleList;
+				//lpWebPatch->GetModuleList( &moduleList );
+
+				//SysFreeString( moduleList )
+
+				//lpWebPatch->DownloadModule(L"Module Name", true)
+			}
+
+			lProcID = lpWebPatch->processID;
+		}
+
+		// SHUTDOWN WEBPATCH
+		int iErrorCode = 0;//BLBL 29 mars 2009 initialisation de la variable à 0
+		int i = 0;
+		if (bWebPatchUpdate) {
+			HANDLE hP = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, lProcID);
+			GetExitCodeProcess(hP, &dwExitCode);
+			while (dwExitCode == STILL_ACTIVE && i < 80) {
+				iErrorCode = GetLastError();
+				TerminateProcess(hP, 0);
+				Sleep(250);
+				GetExitCodeProcess(hP, &dwExitCode);
+				i++;
+			}
+		}
+
+		if (i >= 80) {
+			char Temp[1000];
+			LPVOID lpMsgBuf;
+
+			FormatMessage(
+				FORMAT_MESSAGE_ALLOCATE_BUFFER |
+				FORMAT_MESSAGE_FROM_SYSTEM |
+				FORMAT_MESSAGE_IGNORE_INSERTS,
+				NULL,
+				iErrorCode,
+				MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
+				(LPTSTR)&lpMsgBuf,
+				0,
+				NULL
+			);
+
+			sprintf(Temp, g_LocalString[411], (LPCTSTR)lpMsgBuf);
+			MessageBox(siGethWnd(), Temp, g_LocalString[410], MB_OK);
+
+			LocalFree(lpMsgBuf);
+			g_App.Close(Temp);
+		}
+
+		if (bWebPatchUpdate) {
+			// Copy files in the Download directory to the directory
+			// specified by lpWebPatch->webPatchDirectory
+
+			wchar_t szFrom[256];
+			wchar_t szTo[256];
+			wchar_t *szFileName;
+			wchar_t *szTemp;
+
+			szTemp = wcstok(lpszFileList, L"|");
+			while (szTemp) {
+
+				wcscpy(szFrom, szTemp);
+
+				for (int i = wcslen(szTemp); i > 0; i--) {
+					if (szTemp[i] == L'\\') {
+						szFileName = szTemp + i + 1;
+						i = 0;
+					}
+				}
+
+				wcscpy(szTo, szPatchDir);
+				wcscat(szTo, szFileName);
+
+				char szFromA[1000];
+				char szToA[1000];
+
+				ZeroMemory(szFromA, 1000);
+				ZeroMemory(szToA, 1000);
+				vir::UnicodeToAnsi()(szFrom, szFromA);
+				vir::UnicodeToAnsi()(szTo, szToA);
+
+				i = 0;
+				while (!CopyFile(szFromA, szToA, FALSE) && i < 80) {
+					iErrorCode = GetLastError();
+					Sleep(250);
+					i++;
+				}
+				Sleep(1000);
+				DeleteFileW(szFrom);
+
+				if (i >= 80) {
+					char Temp[1000];
+					LPVOID lpMsgBuf;
+
+					ZeroMemory(Temp, 1000);
+
+					FormatMessage(
+						FORMAT_MESSAGE_ALLOCATE_BUFFER |
+						FORMAT_MESSAGE_FROM_SYSTEM |
+						FORMAT_MESSAGE_IGNORE_INSERTS,
+						NULL,
+						iErrorCode,
+						MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
+						(LPTSTR)&lpMsgBuf,
+						0,
+						NULL
+					);
+
+					sprintf(Temp, g_LocalString[412], szFromA, szToA, (LPCTSTR)lpMsgBuf);
+					MessageBox(siGethWnd(), Temp, g_LocalString[410], MB_OK);
+
+					LocalFree(lpMsgBuf);
+					g_App.Close(Temp);
+				}
+
+				szTemp = wcstok(NULL, L"|");
+			}
+
+			ShellExecute(siGethWnd(), "open", "webpatch.exe", "-regserver", "", SW_HIDE);
+			Sleep(500);
+
+			if (!g_boQuitApp) {
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_COMBO1), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, ACCOUNT), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, PASSWORD), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_SAVE), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_GRAPH), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_WINDOWED), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDC_INFO), TRUE);
+				EnableWindow(GetDlgItem(GlobalHwnd, IDCANCEL), TRUE);
+				InvalidateRect(GlobalHwnd, NULL, FALSE);
+				UpdateWindow(GlobalHwnd);
+				WebPatchUpdate(lpszPath, lpszIP, lpszUser, lpszPassword, dwVersion);
+			}
+		}
+	}
+	catch (_com_error e) {
+		char Temp[1000];
+		sprintf(Temp, g_LocalString[413], e.ErrorMessage());
+		MessageBox(siGethWnd(), Temp, "Webpatch error", MB_OK);
+		MessageBox(siGethWnd(), "Please run T4C in Administrator mode to solve this issue.", "Webpatch error", MB_OK);
+		g_App.Close(Temp);
+	}
+}
 
 //BLBL message Please wait while loading The Fouth coming
 void DrawFisrtLoadingText()

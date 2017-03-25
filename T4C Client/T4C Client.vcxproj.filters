@@ -872,6 +872,9 @@
     <ClInclude Include="UDP\Thread.h">
       <Filter>UDP</Filter>
     </ClInclude>
+    <ClInclude Include="TFCCRYPTC\include\Crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cur00001.cur">
@@ -910,6 +913,9 @@
       <Filter>Lib Files</Filter>
     </Library>
     <Library Include="Lib\Wsock32.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="TFCCRYPTC\lib\TFCCrypt.lib">
       <Filter>Lib Files</Filter>
     </Library>
   </ItemGroup>

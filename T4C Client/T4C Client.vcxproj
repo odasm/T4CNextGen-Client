@@ -74,7 +74,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\TFCCryptC\include;Zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>TFCCryptC\include;Zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NLOG_LOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -92,7 +92,7 @@
       <AdditionalDependencies>zlib.lib;odbc32.lib;odbccp32.lib;TFCCrypt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\Release\T4C.EXE</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\TFCCryptC\Lib;Zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>TFCCryptC\Lib;Zlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>.\Release/T4C3.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -1602,6 +1602,7 @@
     <ClInclude Include="T3Sound.h" />
     <ClInclude Include="TemplateList.h" />
     <ClInclude Include="templatequeues.h" />
+    <ClInclude Include="TFCCRYPTC\include\Crypt.h" />
     <ClInclude Include="TFCFlag.h" />
     <ClInclude Include="TFCLanddef.h" />
     <ClInclude Include="TFCObject.h" />
@@ -1645,6 +1646,7 @@
     <Library Include="Lib\Imagehlp.lib" />
     <Library Include="Lib\Winmm.lib" />
     <Library Include="Lib\Wsock32.lib" />
+    <Library Include="TFCCRYPTC\lib\TFCCrypt.lib" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T4CLauncher\T4CLauncher.vcxproj">

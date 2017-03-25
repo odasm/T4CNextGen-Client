@@ -1,0 +1,415 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BACK_MAIN_DLG       BITMAP  DISCARDABLE     "res\\MainDlg.bmp"
+IDB_BTN_FRAME2          BITMAP  DISCARDABLE     "res\\BtnFrame2.bmp"
+IDB_BACK_SERVER_DLG     BITMAP  DISCARDABLE     "res\\ServerDlg.bmp"
+IDB_BTN_FRAME3          BITMAP  DISCARDABLE     "res\\BtnFrame3.bmp"
+IDB_BMP_BACK_INTRO      BITMAP  DISCARDABLE     "res\\BackIntro.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "res\\logo.bmp"
+IDB_CREDIT_VIRCOM       BITMAP  DISCARDABLE     "res\\CreditVircom.bmp"
+IDB_CREDIT_DIALSOFT     BITMAP  DISCARDABLE     "res\\CreditDialsoft.bmp"
+IDB_CREDIT_INTRO        BITMAP  DISCARDABLE     "res\\CreditIntro.bmp"
+IDB_CREDIT_V2           BITMAP  DISCARDABLE     "res\\CreditV2.bmp"
+IDB_BITMAP_HSB          BITMAP  DISCARDABLE     "res\\CCHSB.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SERVER_DLG DIALOGEX 0, 0, 427, 296
+STYLE WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_STR_NAME,269,42,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STR_IP,269,90,132,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STR_LOGIN,269,111,88,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STR_PASSWORD,269,127,88,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Title",IDC_STR_DLG_SERVER_TITLE,81,3,202,12
+    DEFPUSHBUTTON   "X",IDOK,395,1,28,15,NOT WS_TABSTOP
+    CONTROL         "List1",IDC_LIST_CONNECTION,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_OWNERDRAWFIXED | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER,27,20,139,156,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Delete",IDC_BTN_DEL,307,155,62,16,NOT WS_TABSTOP
+    LTEXT           "Server Name",IDC_STATIC_NAME,198,43,64,11
+    LTEXT           "Server IP",IDC_STATIC_IP,198,91,64,11
+    LTEXT           "Login",IDC_STATIC_LOGIN,198,112,64,11
+    LTEXT           "Password",IDC_STATIC_PASSWORD,198,128,64,11
+    PUSHBUTTON      "Add",IDC_BTN_ADD,227,155,62,16,NOT WS_TABSTOP
+    PUSHBUTTON      "Close",IDC_BTN_FERMER,263,257,62,16,NOT WS_TABSTOP
+    CONTROL         "",IDC_CHECK_WINDOWED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,36,189,8,8
+    CONTROL         "",IDC_CHECK_800X600,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,36,209,8,8
+    LTEXT           "Windowed",IDC_STATIC_WINDOWED,52,188,95,8
+    LTEXT           "1024 x 800 resolution",IDC_STATIC_800X600,52,208,95,8
+    CONTROL         "",IDC_CB_SERVER_LIST,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_DISABLED,268,64,132,19
+    COMBOBOX        IDC_CB_LANGUAGE,36,221,111,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Close",IDC_BTN_MACRO,43,257,110,16,NOT WS_TABSTOP
+    CONTROL         "",IDC_CHECK_640X480,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,36,199,8,8
+    LTEXT           "800 x 600 resolution",IDC_STATIC_640x480,52,198,95,8
+    CONTROL         "",IDC_CHECK_LAUNCHER_SOUND,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,36,219,8,8
+    LTEXT           "Launcher Sound",IDC_STATIC_LAUNCHER_SOUND,52,218,95,8,
+                    NOT WS_VISIBLE | WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SERVER_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 295
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_POINTER             CURSOR  DISCARDABLE     "res\\NORMAL01.CUR"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SERVER_DLG DLGINIT
+BEGIN
+    IDC_CB_LANGUAGE, 0x403, 18, 0
+0x6e45, 0x6c67, 0x7369, 0x2068, 0x202f, 0x6e41, 0x6c67, 0x6961, 0x0073, 
+
+    IDC_CB_LANGUAGE, 0x403, 18, 0
+0x7246, 0x6e65, 0x6863, 0x2f20, 0x4620, 0x6172, 0x636e, 0x6961, 0x0073, 
+
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040C04B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "T4CLauncher DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "T4CLauncher\0"
+            VALUE "LegalCopyright", "Copyright (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "T4CLauncher.DLL\0"
+            VALUE "ProductName", "Bibliothèque de liaison dynamique T4CLauncher\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x40c, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRC)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH_CANADIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BTN_FRAME4          BITMAP  DISCARDABLE     "res\\BtnFrame4.bmp"
+IDB_IP_CONTOUR          BITMAP  DISCARDABLE     "res\\IpContour.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 426, 295
+STYLE WS_POPUP
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDCM_STR_IP,139,96,116,14,ES_AUTOHSCROLL
+    EDITTEXT        IDCM_STR_LOGIN,326,96,75,13,ES_AUTOHSCROLL
+    EDITTEXT        IDCM_STR_PASSWORD,326,111,75,13,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Connect",IDC_BTN_CONNECT,338,140,69,16,NOT WS_TABSTOP
+    CONTROL         130,IDC_BMP_BACK_INTRO,"Static",SS_BITMAP,0,18,300,188
+    CONTROL         "",IDC_AVI_INTRO_1,"Static",SS_BLACKFRAME,173,95,236,148
+    PUSHBUTTON      "X",IDC_BTN_EXIT,395,1,28,15,NOT WS_TABSTOP
+    PUSHBUTTON      "Intro",IDC_BTN_INTRO,19,168,69,16,NOT WS_TABSTOP
+    PUSHBUTTON      "Setup",IDC_BTN_SERVER_INFO,19,140,69,16,NOT WS_TABSTOP
+    PUSHBUTTON      "Credit",IDC_BTN_CREDIT,19,189,69,16,NOT WS_TABSTOP
+    PUSHBUTTON      "_",IDC_BTN_MINIMIZE,366,1,28,15,NOT WS_TABSTOP
+    LTEXT           "Title",IDC_STR_DLG_TITLE,81,3,202,12
+    CTEXT           "",IDC_STR_WEB_LINK1,20,211,21,9 // steph ajout
+    CTEXT           "",IDC_STR_WEB_LINK2,19,232,60,9 // steph ajout
+    LTEXT           "Static",IDC_CONNECT_STATUS_GEN,177,101,227,16
+    CONTROL         "List1",IDC_LIST_INFO,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_OWNERDRAWFIXED | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER,175,119,229,109,
+                    WS_EX_TRANSPARENT
+    CONTROL         "",IDC_CB_SERVER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE | 
+                    WS_DISABLED,41,108,150,22
+    CONTROL         "",IDC_CREDIT,"Static",SS_BLACKFRAME,9,68,297,186
+    LTEXT           "IP :",IDC_MSTATIC_IP,111,97,26,11
+    LTEXT           "Login",IDC_MSTATIC_LOGIN,257,97,64,11
+    LTEXT           "Password",IDC_MSTATIC_PASSWORD,257,112,64,11
+    CONTROL         146,IDC_BMP_BACK_IP,"Static",SS_BITMAP,31,25,300,188
+END
+
+IDD_MACRO_DLG DIALOGEX 0, 0, 328, 283
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Macro & CC Color"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Macro",IDC_STATIC,7,3,165,163
+    CONTROL         "Inventory",IDC_CHK_INVENTORY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,14,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,15,26,8
+    EDITTEXT        IDC_EDIT_INVENTORY,133,13,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Character",IDC_CHK_CHARACTERUI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,27,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,28,26,8
+    EDITTEXT        IDC_EDIT_CHARACTERUI,133,26,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Chatter",IDC_CHK_CHATTERUI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,40,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,41,26,8
+    EDITTEXT        IDC_EDIT_CHATTER,133,39,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Group Play",IDC_CHK_GROUPUI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,53,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,54,26,8
+    EDITTEXT        IDC_EDIT_GROUPUI,133,52,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spell Books",IDC_CHK_SPELLUI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,66,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,67,26,8
+    EDITTEXT        IDC_EDIT_SPELLUI,133,65,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Macro",IDC_CHK_MACROUI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,79,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,80,26,8
+    EDITTEXT        IDC_EDIT_MACROUI,133,78,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Trade",IDC_CHK_TRADE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,92,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,93,26,8
+    EDITTEXT        IDC_EDIT_TRADE,133,91,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Option",IDC_CHK_OPTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,105,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,106,26,8
+    EDITTEXT        IDC_EDIT_OPTION,133,104,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Screen Shot",IDC_CHK_SCREENSHOT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,118,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,119,26,8
+    EDITTEXT        IDC_EDIT_SCREENSHOT,133,117,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Show Map",IDC_STATIC_MAP,19,144,35,8
+    LTEXT           "CTRL +   W",IDC_STATIC,105,144,39,8
+    LTEXT           "Combat Mode",IDC_STATIC_COMBAT,19,153,45,8
+    LTEXT           "CTRL +   C",IDC_STATIC,105,153,36,8
+    CONTROL         "",IDC_STATIC_COLOR_PICK,"Static",SS_ETCHEDFRAME,7,168,
+                    144,108
+    CONTROL         "",IDC_STATIC_COLOR,"Static",SS_ETCHEDFRAME,157,168,15,
+                    108
+    CTEXT           "List of Chanal Color",IDC_STR_TITLE,179,3,142,12,0,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "List1",IDC_LIST_COLOR,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,179,18,142,221
+    PUSHBUTTON      "Add",IDC_BTN_ADD,179,244,42,14
+    PUSHBUTTON      "Modify",IDC_BTN_MOD,224,244,42,14
+    PUSHBUTTON      "Delete",IDC_BTN_DEL,279,244,42,14
+    PUSHBUTTON      "Restore Default Color",IDC_BTN_RESTAURE_DEFAULT_COLOR,
+                    179,262,142,14
+    CONTROL         "Switch Chat Size",IDC_CHK_SWITCH_CHAT_SIZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,131,79,10
+    LTEXT           "CTRL +",IDC_STATIC,105,132,26,8
+    EDITTEXT        IDC_EDIT_SWITCHCHAT,133,130,19,12,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 424
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 294
+    END
+
+    IDD_MACRO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 276
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_LINK_CURSOR         CURSOR  DISCARDABLE     "res\\LINK.CUR"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 12, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\T4CLauncher.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.fra\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // French (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE 12, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\T4CLauncher.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.fra\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

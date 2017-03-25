@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T4C Client", "T4C Client\T4C Client.vcxproj", "{E5656FF3-8255-49F8-A398-23C0958BA8EE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T4CLauncher", "T4CLauncher\T4CLauncher.vcxproj", "{DED87139-2B5B-44FB-BA8B-E195DFD0E904}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Maison|x86 = Debug Maison|x86
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Debug Maison|x86.ActiveCfg = Debug Maison|Win32
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Debug Maison|x86.Build.0 = Debug Maison|Win32
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Debug|x86.Build.0 = Debug|Win32
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Release|x86.ActiveCfg = Release|Win32
+		{E5656FF3-8255-49F8-A398-23C0958BA8EE}.Release|x86.Build.0 = Release|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Debug Maison|x86.ActiveCfg = Debug Maison|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Debug Maison|x86.Build.0 = Debug Maison|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Debug|x86.ActiveCfg = Debug|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Debug|x86.Build.0 = Debug|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Release|x86.ActiveCfg = Release|Win32
+		{DED87139-2B5B-44FB-BA8B-E195DFD0E904}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

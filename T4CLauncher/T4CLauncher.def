@@ -1,0 +1,7 @@
+; T4CLauncher.def : Declares the module parameters for the DLL.
+
+LIBRARY      "T4CLauncher"
+DESCRIPTION  'T4CLauncher Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

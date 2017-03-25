@@ -1,0 +1,916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a61b138e-886f-4dcf-981d-9745f03ca84e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\MP3 Sources">
+      <UniqueIdentifier>{a97505bd-2644-4a7f-8149-276a992345cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\New Interface">
+      <UniqueIdentifier>{40220c58-a108-44e3-9883-d25340b69014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f60262a7-03a8-4104-b044-41ec66701567}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\MP3 Headers">
+      <UniqueIdentifier>{97d75f0d-4ade-4fda-bf53-deaf4802c005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\New Interface No. 1">
+      <UniqueIdentifier>{be68bd46-df13-4c48-a97d-4bd1263f8f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{95368f1c-5bba-4b08-a06d-843fe94d9157}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Text Files">
+      <UniqueIdentifier>{e0873375-c944-4231-9ff2-ed25a538ff68}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+    <Filter Include="Lib Files">
+      <UniqueIdentifier>{d8fb50a6-ecb0-4624-804d-723b4d86ed70}</UniqueIdentifier>
+      <Extensions>lib</Extensions>
+    </Filter>
+    <Filter Include="MD5">
+      <UniqueIdentifier>{e1149943-5f31-4d52-ae43-20ae417a9007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UDP">
+      <UniqueIdentifier>{12cee2d1-4c49-4562-a1f4-6f83c11b9b00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Autolock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDAduio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Comm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommCenter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugLoggerAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXInput.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Disp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="encrandom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Encrypter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Expfltr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormatText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameIcons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMusic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUILocalString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Icon3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IDirectXDraw.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IDirectXImage.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IDirectXPcx.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LightMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MacroHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathieu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MemMapFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewFont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewSound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NMVideoCapture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="packethandling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerDebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcStat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Puppet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SysMsg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="T3 Sound Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="T3 Sound Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="T3 Wave Filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TFCObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TFCPacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TFCPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TFCSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tileset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMouseEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="V2Database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="V2PalManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="V2Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoCapture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualObjectList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weather.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer_nt.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Formats.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Getopt.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files\MP3 Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\AnimUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\BoxUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ButtonUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\BuyUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\CharacterUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ChatterUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ChestUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ControlUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\DropZoneUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\EditUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\EffectStatusUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\EmptyEvent.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\EventVisitor.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\GameUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\GraphUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\GridUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\GroupPlayUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\GuildUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\InventoryUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ListUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\MacroUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\OptionsUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\RobUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\RootBoxUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\RTHelp.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\RTItemI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\RTMap.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\ScrollUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SellUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SideMenu.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SkillTeachUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SkillTrainUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SliderUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\SpellUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\StaticTextUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\TextPageUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NewInterface\TradeUI.cpp">
+      <Filter>Source Files\New Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5\MD5Checksum.cpp">
+      <Filter>MD5</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\LoopThread.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\Mutex.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\Queue.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\QueueVector.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\Semaphore.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="UDP\Thread.cpp">
+      <Filter>UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="PvpRanking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XPStat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="NewInterface\Todo.txt">
+      <Filter>Source Files\New Interface</Filter>
+    </Text>
+    <Text Include="Cd.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="french.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="Ignore.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="Language.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="License.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="Release.txt">
+      <Filter>Text Files</Filter>
+    </Text>
+    <Text Include="ServerList.Txt">
+      <Filter>Text Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Apparence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoLock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AviFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxListing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatCursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Comm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommCenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComPacketHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugLoggerAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dinput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXInput.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Disp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EasyMail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="encrandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Encrypter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Expfltr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="\SOURCES\SOURCES\CLIENT\CLIENT168_RC14h_OK\source~1\t4cwor~1\EXECPTION\Expfltr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormatText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Franck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameIcons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMusic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUILocalString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Icon3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectXDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectXFont.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectXImage.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectXPcx.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDirectXSprite.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LightMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MacroHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemMapFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NewFont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NewSound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="newstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NMVideoCapture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectListing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="packethandling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcStat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Puppet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Request.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SysMsg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="T3Sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="templatequeues.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCFlag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCLanddef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCPacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TFCSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMouseEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="V2Database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="V2PalManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="V2Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vdlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoCapture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualObjectList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WarningBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weather.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Header Files\MP3 Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Audioio.h">
+      <Filter>Header Files\MP3 Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Formats.h">
+      <Filter>Header Files\MP3 Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Getopt.h">
+      <Filter>Header Files\MP3 Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Proto.h">
+      <Filter>Header Files\MP3 Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\AnimUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\BoxUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\ButtonUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\BuyUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\CharacterUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\ChatterUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\ChestUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\ControlUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\DropZoneUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\EditUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\EffectStatusUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\EmptyEvent.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\EventVisitor.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\GameUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\GraphUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\GridUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\GroupPlayUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\GuildUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\InventoryUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\ListUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\MacroUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\OptionsUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\RobUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\RootBoxUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\RTHelp.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\RTItemI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\RTMap.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SellUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SideMenu.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SkillTeachUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SkillTrainUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SliderUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\SpellUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\StaticTextUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\TextPageUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="NewInterface\TradeUI.h">
+      <Filter>Header Files\New Interface No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5\MD5Checksum.h">
+      <Filter>MD5</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5\MD5ChecksumDefines.h">
+      <Filter>MD5</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\LoopThread.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\Mutex.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\Queue.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\QueueVector.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\Semaphore.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+    <ClInclude Include="UDP\Thread.h">
+      <Filter>UDP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cur00001.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor2.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ENGLISH.lng">
+      <Filter>Text Files</Filter>
+    </None>
+    <None Include="WebPatch.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="newicons.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Lib\Ddraw.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Dinput.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Dsound.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Dxguid.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Imagehlp.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Winmm.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+    <Library Include="Lib\Wsock32.lib">
+      <Filter>Lib Files</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

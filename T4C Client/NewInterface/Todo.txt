@@ -1,0 +1,105 @@
+NEW: Dblclicking a user in the chatterUI sets paging mode with this user.
+
+-- Misc
+ - Server
+   - Display xQty when right-clicking on ground item   
+   - Add channel settings in control panel.
+ - Client
+   - Verify all context sensitive helps.
+   - Clicks get interpreted by root screen when boxes are hidden.
+   - Les torches sont quasi-invisibles dans l'inventory.
+   - Selection, zone not resized when changing screen offset.   
+   - Check HTML help
+   - Check macro autoSelf.
+-- GroupPlay
+   - First item in list doesn't have a right highlight.
+   - Missing split off button.
+-- Options
+   - Check why transparency option doesn't work.
+   - Checks and highlights have black bar.
+-- Chatter
+   - The backscroll up/down arrows have red blurr.
+-- Inventory
+   - Junk/drop text not set correctly in popup.
+
+[DONE]
+-- SideMenu
+-- Misc
+ - Server
+   - Dropping gold sets the amount to 0.
+   - Junking gold doesn't reset user's gold
+   - Verify if there is a weight check when getting item stacks.
+   - Limit group play to 8 players.
+ - Client
+   - CTRL-C conflict between chatterUI and attack mode
+   - Do slider scroll buttons.
+   - XP bar will screw up level 160+
+   - Add scroll bar down buttons where forgotten.
+   - Forward shouts to CC Main.
+   - Do echo to screen when chat UI isn't up for certain messages.
+   - Reposition help texts when upperbound is too high and
+     when rightbound is too small.
+   - Quit function too radical, should ask for yes/no
+   - Minimized UIs not resized when clicking full UI button
+   - Default selected channel should be Main
+-- Inventory
+   - The gold stat isn't updated in real-time.
+   - Dropping an item which is far away in the item grid will make scrollbar
+     dissappear until manual scrollup restores the situation.
+   - Help text (icons) not well placed.
+   - Need help for all other stats.
+-- Character
+   - Need help for all other stats.
+   - Intl text not well placed and wrong palette.   
+   - Backlog when user uses a skill.
+   - Weight not updated in real-time.   
+   - Help text (icons) not well placed.
+   - Stats change button needs to be trimmed.
+   - Stats change button needs to be English
+   - Need up/down arrow for stat updates.
+   - Need selection bar for skill list.
+   - Icons have red blurr.
+   - Need macro button sprites.
+   - Skill icons not complete.
+-- Chatter
+   - Integrate corrected selection bars.
+   - Ignore list graphics integration.
+   - Join channel graphics integration.   
+   - Need highlight for ignore list.
+   - Need to display missing part when minimized chatterUI is up without side menu.
+   - IgnoreList popup intl text and scroll button icons have a red blurr.
+   - Shorten user list scroll bar.
+   - Page cursor not ok.
+-- Options
+   - Add backlog options.
+   - Change backlog file name so a popup asks for the file name.
+   - All check/no check buttons are 2-3 pixels right
+   - Check highlights are not highlighted.
+   - Option popup intl text has red blurr
+   - The sliders are not well divised.
+   - Add option for displaying the effect status or not.
+-- Macro
+   - Minimized button
+   - Need macro list highlight.
+   - Icons have red blurr.
+   - Macro wrongly resized when maximzed
+   - Minimized icon position isn't right.
+   - Setup columns so icons fit.   
+-- GroupPlay
+   - Minimized button
+   - Minimized version.
+   - Initilial HP list should be empty.
+   - Group listing lost player name.
+-- SkillTeach   
+   - Send skill point cost in teach list.
+   - Integrate up/down arrows
+-- SkillTrain
+-- Buy/Sell
+   - Icons have red blurr.
+-- EffectStatus
+   - Need icon positions
+   - Need scroll buttons and positions.
+   - Server doesn't send saved effect status.
+-- Spell
+   - Need spell icons and macro icons.
+   - Change spell type from element to type.

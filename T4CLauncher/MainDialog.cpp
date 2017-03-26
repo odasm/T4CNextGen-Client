@@ -1673,26 +1673,26 @@ BOOL CMainDialog::GetWindowed()
 int  CMainDialog::GetWidth()
 {
    if(m_sLauncherConfig.bResolution == 0)
-      return 1280; // steph 1280 au lieu de 1024
+      return 1280; // Resolution 1280x720
    else if(m_sLauncherConfig.bResolution == 1)
-      return 1024;
+      return 1920; // Resolution 1920x1080
    else if(m_sLauncherConfig.bResolution == 2)
-      return 800;
+      return 1600; // Resolution 1600x900
    else
-      return 1280; // steph 1280 au lieu de 1024
+      return 1280; // Resolution 1280x720
 
 }
 
 int  CMainDialog::GetHeight()
 {
    if(m_sLauncherConfig.bResolution == 0)
-      return 800; // steph 800 au lieu de 768
+      return 720; // Resolution 1280x720
    else if(m_sLauncherConfig.bResolution == 1)
-      return 768;
+      return 1080; // Resolution 1920x1080
    else if(m_sLauncherConfig.bResolution == 2)
-      return 600;
+      return 900; // Resolution 1600x900
    else
-      return 800; // steph 800 au lieu de 768
+      return 720; // Resolution 1280x720
 }
 
 int   CMainDialog::GetLanguage()

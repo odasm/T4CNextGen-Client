@@ -28,7 +28,7 @@ Global g_Global;
 
 Global::Global()
 {
-   SetDisplaySize(1280,800); // steph 1280*800 au lieu de 1024*768
+   SetDisplaySize(1280,720); // Default Resolution 1280x720
    m_dwMainTorchW   = 320;
    m_dwMainTorchH   = 240;
 

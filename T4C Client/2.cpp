@@ -1,6 +1,6 @@
-/* this file is a part of amp software, (C) tomislav uzelac 1996,1997
+/* This file is a part of AMP Software, (C) Tomislav Uzelac 1996,1997
 
-	Origional code by: tomislav uzelac
+	Original code by: Tomislav Uzelac
 	Modified by:
 	* Dan Nelson - BSD mods.
 	* Andrew Richards - moved code from audio.c and added mixer support etc

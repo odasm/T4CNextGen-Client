@@ -251,11 +251,11 @@ ChatterUI::ChatterUI( void )
     ignoreListButton.SetHighlightUI( "GUI_ChatIgnoreHUp" );
 
     // Text input always has a cursor.
-	// by Asteryth modified to be equal 0 for a default resolution 1280 with 1272px sprite
-    //int dwOffset = 729+8-(g_Global.GetScreenW()-287);
-    //dwOffset*=-1;
-	int dwOffset = 985+8-(g_Global.GetScreenW()-287);
-	dwOffset*=-1;
+	// by PoPo modified to be equal 0 for a default resolution 1920 with 1912px sprite
+	//int dwOffset = 729+8-(g_Global.GetScreenW()-287);
+	//dwOffset*=-1;
+	int dwOffset = 1625 + 8 - (g_Global.GetScreenW() - 287);
+	dwOffset *= -1;
 
     textInput.EnableCursor( true );
     textInput.SetPos( FramePos( 40,g_Global.GetScreenH()-28, dwOffset+8+737-48-48, g_Global.GetScreenH()-8 ) );
@@ -316,30 +316,33 @@ ChatterUI::ChatterUI( void )
 
     //DEBUT New GUI menu toujours en bas pour le CHAT...
 
-	// by Asteryth be careful your sprite GUI_backChat must have a horizontal size of your resolution - 8 
-	// by Asteryth dwOffset+8+1016 => dwOffset+8+1272 with the new sprites
-	// by Asteryth dwOffset+8+732 => dwOffset+8+988 with the new sprites
-    minimizedGraph .SetSpriteId( "GUI_backChat" );
-    minimizedGraph .SetPos( FramePos( dwOffset+8, g_Global.GetScreenH()-150, dwOffset+8+1272, g_Global.GetScreenH()));
-	minimizedGraph .DrawAlpha(true);
-    minimizedGraphHR.SetSpriteId( "GUI_backHRChat" );
-    minimizedGraphHR.SetPos( FramePos( dwOffset+8, g_Global.GetScreenH()-150, dwOffset+8+1272, g_Global.GetScreenH()));
-    minimizedGraphHR.DrawAlpha(true);
-    minimizedGraphHL.SetSpriteId( "GUI_backHLChat" );
-    minimizedGraphHL.SetPos( FramePos( dwOffset+8, g_Global.GetScreenH()-300, dwOffset+8+988, g_Global.GetScreenH()));
-    minimizedGraphHL.DrawAlpha(true);
+	// Be careful your sprite GUI_backChat must have a horizontal size of your (resolution-8) 
+	// by PoPo dwOffset+8+1272 => dwOffset+8+1912 with the new sprites [+640]
+	// by PoPo dwOffset+8+988 => dwOffset+8+1628 with the new sprites [+640]
+	minimizedGraph.SetSpriteId("GUI_backChat");
+	minimizedGraph.SetPos(FramePos(dwOffset+8, g_Global.GetScreenH()-150, dwOffset+8+1912, g_Global.GetScreenH()));
+	minimizedGraph.DrawAlpha(true);
 
-    minimizedGraphHHHB.SetSpriteId( "GUI_backHHHBChat" );
-    minimizedGraphHHHB.SetPos( FramePos( dwOffset+8, g_Global.GetScreenH()-300, dwOffset+8+988, g_Global.GetScreenH()));
-    minimizedGraphHHHB.DrawAlpha(true);
+	minimizedGraphHR.SetSpriteId("GUI_backHRChat");
+	minimizedGraphHR.SetPos(FramePos(dwOffset +8, g_Global.GetScreenH()-150, dwOffset+8+1912, g_Global.GetScreenH()));
+	minimizedGraphHR.DrawAlpha(true);
 
-    minimizedGraphHHHT.SetSpriteId( "GUI_backHHHTChat" );
-    minimizedGraphHHHT.SetPos( FramePos( dwOffset+8, g_Global.GetScreenH()-592, dwOffset+8+988, g_Global.GetScreenH()-300));
-    minimizedGraphHHHT.DrawAlpha(true);
+	minimizedGraphHL.SetSpriteId("GUI_backHLChat");
+	minimizedGraphHL.SetPos(FramePos(dwOffset+8, g_Global.GetScreenH()-300, dwOffset+8+1628, g_Global.GetScreenH()));
+	minimizedGraphHL.DrawAlpha(true);
+
+	minimizedGraphHHHB.SetSpriteId("GUI_backHHHBChat");
+	minimizedGraphHHHB.SetPos(FramePos(dwOffset+8, g_Global.GetScreenH()-300, dwOffset+8+1628, g_Global.GetScreenH()));
+	minimizedGraphHHHB.DrawAlpha(true);
+
+	minimizedGraphHHHT.SetSpriteId("GUI_backHHHTChat");
+	minimizedGraphHHHT.SetPos(FramePos(dwOffset+8, g_Global.GetScreenH()-592, dwOffset+8+1628, g_Global.GetScreenH()-300));
+	minimizedGraphHHHT.DrawAlpha(true);
 
     sideFill .SetSpriteId( "GUI_backChatLeft" );
     sideFill .SetPos( FramePos( 0, g_Global.GetScreenH()-150, 8, g_Global.GetScreenH()));
     sideFill .DrawAlpha(true);
+
     sideFillH.SetSpriteId( "GUI_backHChatLeft" );
     sideFillH.SetPos( FramePos( 0, g_Global.GetScreenH()-300, 8, g_Global.GetScreenH()));
     sideFillH.DrawAlpha(true);

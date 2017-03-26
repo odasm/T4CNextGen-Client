@@ -2265,9 +2265,9 @@ void TFCSocket::MenuThread(void)
 
       // display du back de toute les page apres le splash et le LOGO !!!!!!!
       int dwOffset = 20;
-      if(g_Global.GetScreenW() == 1204) // steph 1024 au lieu de 800
+      if(g_Global.GetScreenW() == 720) // for 1280x720
          dwOffset = 40;
-      else if(g_Global.GetScreenW() == 1280) // steph 1280 au lieu de 1024
+      else if(g_Global.GetScreenW() == 900) // for 1600x900
          dwOffset = 60;
 
       int dwTitemEndPos = dwOffset+Connect_Title2.GetHeight();

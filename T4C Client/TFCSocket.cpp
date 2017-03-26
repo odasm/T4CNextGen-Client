@@ -389,10 +389,11 @@ UINT WINAPI DrawThread(LPVOID pParam)
    DWORD tLastTick = 0;
    float FramePerSecond=0;//BLBLBL initialisation à 0
    
-   while (!g_Var.inGame)
+   //Disabled; seems to cause conflicts w/ 25+ fps. @PoPo
+   /*while (!g_Var.inGame)
    {
       Sleep(50);
-   }
+   }*/
 
    int dwCode = 0;
    int dwCnt  = 0;
@@ -561,6 +562,8 @@ UINT WINAPI DrawThread(LPVOID pParam)
          NeedRedraw = false;
       }
 
+
+	  //Main Thread @PoPo
       if ((timeGetTime() - tLastFrame) > g_Var.tWaitFPSTime ) 
       {
          tLastFrame = timeGetTime(); 
@@ -1002,7 +1005,7 @@ void TFCSocket::MainThread(void) {
         g_App.LockMainThread();
         
         
-        Sleep(20);
+        //Sleep(20); // Seems unnecessary @PoPo
         // While Main Thread
         if (!COMM.isAlive()) {
             LOG << "Ask Close 14\r\n";
@@ -1283,300 +1286,322 @@ void TFCSocket::MainThread(void) {
                
                 
                 //ManageAutoMove(KBuffer);
+                //Movement function
                 
-                
-                if (!boKeyProcess && !DoNotMove && Move2 && boIsAnyInterfaceUIBlockingMove == FALSE && (!(KBuffer[DIK_LCONTROL] || KBuffer[DIK_RCONTROL])) && (!(KBuffer[DIK_LSHIFT] || KBuffer[DIK_RSHIFT])) ) 
-                {
-                    short shNLState = GetKeyState(VK_NUMLOCK);
-                    shNLState = 1-shNLState;
+				if (!boKeyProcess && !DoNotMove && Move2 && boIsAnyInterfaceUIBlockingMove == FALSE && (!(KBuffer[DIK_LCONTROL] || KBuffer[DIK_RCONTROL])) && (!(KBuffer[DIK_LSHIFT] || KBuffer[DIK_RSHIFT])))
+				{
+					short shNLState = GetKeyState(VK_NUMLOCK);
+					shNLState = 1 - shNLState;
 
-                    if ((KBuffer[DIK_DOWN]  || (shNLState && KBuffer[DIK_NUMPAD2])) &&
-                        (KBuffer[DIK_LEFT]  || (shNLState && KBuffer[DIK_NUMPAD4]))    ){
-                        pfStopMovement("Move 5");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(139);
-                        if (!GridBlocking(9, 16)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)6;//RQ_MoveSouthWest
-                                
-                                SEND_PACKET(Send);
-                            }
-                        }
-                        Objects.Unlock(139);
-                    }
-                    
-                    if ((KBuffer[DIK_DOWN]   || (shNLState && KBuffer[DIK_NUMPAD2])) &&
-                        (KBuffer[DIK_RIGHT]  || (shNLState && KBuffer[DIK_NUMPAD6]))    ) {
-                        pfStopMovement("Move 6");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(140);
-                        if (!GridBlocking(11, 16)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                TFCPacket Send;
-                                
-                                Send << (short)4;//RQ_MoveSouthEast
-                                
-                                SEND_PACKET(Send);
-                            }
-                        }
-                        Objects.Unlock(140);
-                    }
-                    
-                    if ((KBuffer[DIK_UP]    || (shNLState && KBuffer[DIK_NUMPAD8])) &&
-                        (KBuffer[DIK_LEFT]  || (shNLState && KBuffer[DIK_NUMPAD4]))    ){
-                        pfStopMovement("Move 7");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(141);
-                        if (!GridBlocking(9, 14)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)8;//RQ_MoveNorthWest
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(141);
-                    }
-                    
-                    if ((KBuffer[DIK_UP]     || (shNLState && KBuffer[DIK_NUMPAD8])) &&
-                        (KBuffer[DIK_RIGHT]  || (shNLState && KBuffer[DIK_NUMPAD6]))    ){
-                        pfStopMovement("Move 8");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(142);
-                        if (!GridBlocking(11, 14)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)2;//RQ_MoveNorthWest
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(142);
-                    }
-                    
-                    if (KBuffer[DIK_DOWN] || (shNLState && KBuffer[DIK_NUMPAD2])) {
-                        // Send Mouvement
-                        pfStopMovement("Move 9");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(143);
-                        if (!GridBlocking(10, 16)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                dwTimeAsk = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)5;//RQ_MoveSouth
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(143);
-                    }
-                    
-                    if (KBuffer[DIK_UP] || (shNLState && KBuffer[DIK_NUMPAD8])) {
-                        pfStopMovement("Move 10");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(144);
-                        if (!GridBlocking(10, 14)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)1;//RQ_MoveNorth
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(144);
-                    } 
-                    
-                    if (KBuffer[DIK_LEFT] || (shNLState && KBuffer[DIK_NUMPAD4])) {
-                        pfStopMovement("Move 11");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(145);
-                        if (!GridBlocking(9, 15)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)7;//RQ_MoveWest
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(145);
-                    }
-                    
-                    if (KBuffer[DIK_RIGHT] || (shNLState && KBuffer[DIK_NUMPAD6])) {
-                        pfStopMovement("Move 12");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(146);
-                        if (!GridBlocking(11, 15)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)3;//RQ_MoveEast
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
-                        Objects.Unlock(146);
-                    }
-                    
-                    if ((shNLState && KBuffer[DIK_HOME]) || (shNLState && KBuffer[DIK_NUMPAD7])) {		
-                        pfStopMovement("Move 13");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(147);
-                        if (!GridBlocking(9, 14)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                TFCPacket Info;
-                                
-                                Send << (short)8;//RQ_MoveNorthWest
-                                
-                                SEND_PACKET(Send);
-                            }
-                        }
-                        Objects.Unlock(147);
-                    } 
-                    
-                    if ((shNLState && KBuffer[DIK_END]) || (shNLState && KBuffer[DIK_NUMPAD1])) {
-                        pfStopMovement("Move 14");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(148);
-                        if (!GridBlocking(9, 16)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                TFCPacket Info;
-                                
-                                Send << (short)6;//RQ_MoveSouthWest
-                                
-                                SEND_PACKET(Send);
-                            }
-                        }
-                        Objects.Unlock(148);
-                    }
-                    
-                    if ((shNLState && KBuffer[DIK_PRIOR]) || (shNLState && KBuffer[DIK_NUMPAD9])) {
-                        pfStopMovement("Move 15");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(149);
-                        if (!GridBlocking(11, 14)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)2;//RQ_MoveNorthEast
-                                
-                                SEND_PACKET(Send);
-                            }
-                        }
-                        Objects.Unlock(149);
-                    } 
-                    
-                    if ((shNLState && KBuffer[DIK_NEXT]) || (shNLState && KBuffer[DIK_NUMPAD3])) {
-                        pfStopMovement("Move 16");
-                        Follow  = false;
-                        Attack = false;
-                        Use = false;
-                        Get = false;
-                        //Move = true;
-                        Objects.Lock(150);
-                        if (!GridBlocking(11, 16)) {
-                            if (Move) {
-                                Try = timeGetTime();
-                                Move = false;
-                                dwGetMoveTime = timeGetTime();
-                                TFCPacket Send;
-                                
-                                Send << (short)4;//RQ_MoveSouthEast
-                                
-                                SEND_PACKET(Send);
-                                
-                            }
-                        }
+					if ((KBuffer[DIK_DOWN] || (shNLState && KBuffer[DIK_NUMPAD2])) &&
+						(KBuffer[DIK_LEFT] || (shNLState && KBuffer[DIK_NUMPAD4]))) {
+						pfStopMovement("Move 5");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(139);
+						if (!GridBlocking(9, 16)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)6;//RQ_MoveSouthWest
+
+								SEND_PACKET(Send);
+							}
+						}
+						Objects.Unlock(139);
+					}
+
+					if ((KBuffer[DIK_DOWN] || (shNLState && KBuffer[DIK_NUMPAD2])) &&
+						(KBuffer[DIK_RIGHT] || (shNLState && KBuffer[DIK_NUMPAD6]))) {
+						pfStopMovement("Move 6");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(140);
+						if (!GridBlocking(11, 16)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)4;//RQ_MoveSouthEast
+
+								SEND_PACKET(Send);
+							}
+						}
+						Objects.Unlock(140);
+					}
+
+					if ((KBuffer[DIK_UP] || (shNLState && KBuffer[DIK_NUMPAD8])) &&
+						(KBuffer[DIK_LEFT] || (shNLState && KBuffer[DIK_NUMPAD4]))) {
+						pfStopMovement("Move 7");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(141);
+						if (!GridBlocking(9, 14)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)8;//RQ_MoveNorthWest
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(141);
+					}
+
+					if ((KBuffer[DIK_UP] || (shNLState && KBuffer[DIK_NUMPAD8])) &&
+						(KBuffer[DIK_RIGHT] || (shNLState && KBuffer[DIK_NUMPAD6]))) {
+						pfStopMovement("Move 8");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(142);
+						if (!GridBlocking(11, 14)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)2;//RQ_MoveNorthWest
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(142);
+					}
+
+					if (KBuffer[DIK_DOWN] || (shNLState && KBuffer[DIK_NUMPAD2])) {
+						// Send Mouvement
+						pfStopMovement("Move 9");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(143);
+						if (!GridBlocking(10, 16)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)5;//RQ_MoveSouth
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(143);
+					}
+
+					if (KBuffer[DIK_UP] || (shNLState && KBuffer[DIK_NUMPAD8])) {
+						pfStopMovement("Move 10");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(144);
+						if (!GridBlocking(10, 14)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)1;//RQ_MoveNorth
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(144);
+					}
+
+					if (KBuffer[DIK_LEFT] || (shNLState && KBuffer[DIK_NUMPAD4])) {
+						pfStopMovement("Move 11");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(145);
+						if (!GridBlocking(9, 15)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)7;//RQ_MoveWest
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(145);
+					}
+
+					if (KBuffer[DIK_RIGHT] || (shNLState && KBuffer[DIK_NUMPAD6])) {
+						pfStopMovement("Move 12");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(146);
+						if (!GridBlocking(11, 15)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)3;//RQ_MoveEast
+
+								SEND_PACKET(Send);
+
+							}
+						}
+						Objects.Unlock(146);
+					}
+
+					if ((shNLState && KBuffer[DIK_HOME]) || (shNLState && KBuffer[DIK_NUMPAD7])) {
+						pfStopMovement("Move 13");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(147);
+						if (!GridBlocking(9, 14)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)8;//RQ_MoveNorthWest
+
+								SEND_PACKET(Send);
+							}
+						}
+						Objects.Unlock(147);
+					}
+
+					if ((shNLState && KBuffer[DIK_END]) || (shNLState && KBuffer[DIK_NUMPAD1])) {
+						pfStopMovement("Move 14");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(148);
+						if (!GridBlocking(9, 16)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)6;//RQ_MoveSouthWest
+
+								SEND_PACKET(Send);
+							}
+						}
+						Objects.Unlock(148);
+					}
+
+					if ((shNLState && KBuffer[DIK_PRIOR]) || (shNLState && KBuffer[DIK_NUMPAD9])) {
+						pfStopMovement("Move 15");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(149);
+						if (!GridBlocking(11, 14)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)2;//RQ_MoveNorthEast
+
+								SEND_PACKET(Send);
+							}
+						}
+						Objects.Unlock(149);
+					}
+
+					if ((shNLState && KBuffer[DIK_NEXT]) || (shNLState && KBuffer[DIK_NUMPAD3])) {
+						pfStopMovement("Move 16");
+						Follow = false;
+						Attack = false;
+						Use = false;
+						Get = false;
+						//Move = true;
+						Objects.Lock(150);
+						if (!GridBlocking(11, 16)) {
+							if (Move) {
+								Try = timeGetTime();
+								Move = false;
+								dwGetMoveTime = timeGetTime();
+								dwTimeAsk = timeGetTime();
+								TFCPacket Send;
+								TFCPacket Info;
+
+								Send << (short)4;//RQ_MoveSouthEast
+
+								SEND_PACKET(Send);
+
+							}
+						}
                         Objects.Unlock(150);
       }}
       
@@ -1849,28 +1874,6 @@ void TFCSocket::MenuThread(void)
 
 
 
-   Credits.SetText(g_LocalString[9]); // steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText(g_LocalString[10]);  //name and version // steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText(">==Rebirth RC custom release==<"); // steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText("Henry, Project Leader"); // steph
-   Credits.SetText("Shainon, Steph, Debugging/Coding"); // steph ajout de Steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText("<>"); // steph
-   Credits.SetText("<>"); // steph
-
-   Credits.SetText(">==Abomination RC BL custom release==<");
-   Credits.SetText("<>");
-   Credits.SetText("<>");
-   Credits.SetText("<>");
-
-   Credits.SetText("Loïc [Black Lemming] Jean-Fulcrand, Debugging/Coding");
-   Credits.SetText("<>");
-   Credits.SetText("<>");
-   Credits.SetText("<>");
    Credits.SetText(">==T4C V2.0 Project Team==<");
    Credits.SetText("<>");
    Credits.SetText("<>");
@@ -2223,7 +2226,7 @@ void TFCSocket::MenuThread(void)
       Sleep(25);
       
       // While Main Thread
-      if (timeGetTime() - WaitTime > 2000) 
+      if (timeGetTime() - WaitTime > 1000) //Smoothen the improved FPS 2000>>1000
       {
          WaitTime = timeGetTime();
          

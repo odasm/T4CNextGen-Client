@@ -1,9 +1,9 @@
-
 #ifndef __Vircom_Sprite3D_105113070897
 #define __Vircom_Sprite3D_105113070897
 
 
 #define FRAMING 1
+#define FRAMING32 2
 
 struct INFO {
    int Width;

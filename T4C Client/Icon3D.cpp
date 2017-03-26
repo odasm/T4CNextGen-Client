@@ -1466,7 +1466,7 @@ void Sprite3D::LoadSprite3D(int faces, int faces4, int faces5, char *ViewID, int
 	Temp2[1] = 0;
 	
 	Type = type;
-	faces /= FRAMING;
+	faces /= FRAMING; // Conflicts with Darkfang
 	Faces = faces;
 	FacesA = 0;
    FacesC = faces5;

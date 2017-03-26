@@ -30,20 +30,15 @@
 #include "Icon3D.h"
 #include "TFCLandDef.h"
 
-#define DONE 4
-#define MOVX 8
-#define MOVY 4
-#define FPS  16
-
 //#define DONE 4
 //#define MOVX 8
 //#define MOVY 4
 //#define FPS  16
 
-//#define DONE 8
-//#define MOVX 4
-//#define MOVY 2
-//#define FPS  32
+#define DONE 8
+#define MOVX 4
+#define MOVY 2
+#define FPS  32
 
 #define SKILLS 0
 #define STATS 1

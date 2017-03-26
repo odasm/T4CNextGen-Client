@@ -1272,8 +1272,8 @@ int WINAPI WinMain
 	Custom.NMShowPosition = pConfig->dwNMShowPOS;
 	Custom.NMShowFPS      = pConfig->dwNMShowFPS;
 	Custom.NMFPSValue     = pConfig->dwNMFPSValue;
-	if(Custom.NMFPSValue <1 || Custom.NMFPSValue > 25)
-		Custom.NMFPSValue = 16;
+	//if(Custom.NMFPSValue <1 || Custom.NMFPSValue > 25)
+	Custom.NMFPSValue = 32;
 	//Custom.NMFPSValue = 32;
 	g_Var.tWaitFPSTime     = 1000/Custom.NMFPSValue;
 	Custom.TakeScreenShot  = 0;
@@ -2743,8 +2743,8 @@ void InitializeTFCData(void)
      GridBlocking.SetBitmap   (g_Global.GetNbrTileX()+1, g_Global.GetNbrTileY()+1  );
      World.SetVirtualDimension(256,  256);
      World.SetWorldDimension  (3072, 3072);
-     World.SetNumberofWorld   (4);	//Was set to 4 // steph 4 au lieu de 8
-     World.SetWorldFileName   ("Game Files\\V2_WorldMap.Map"); // steph désactivation
+     World.SetNumberofWorld   (4);	//Limit world maps
+     World.SetWorldFileName   ("Game Files\\V2_WorldMap.Map"); 
      World.SetWorldFileName   ("Game Files\\V2_DungeonMap.Map");
      World.SetWorldFileName   ("Game Files\\V2_CavernMap.Map");
      World.SetWorldFileName   ("Game Files\\V2_Underworld.Map");

@@ -596,7 +596,7 @@ AppVariable::AppVariable( void )
    InvalideSaveGame = false;
    bMemory          = false; 
    minimizeState    = false;
-   tWaitFPSTime     = 1000/17;
+   tWaitFPSTime     = 1000/33;
 }
 
 void AppManagement::LockDrawThread(){     drawLock.Lock(); }

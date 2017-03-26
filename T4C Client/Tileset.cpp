@@ -12328,6 +12328,7 @@ void TileSet::DrawWaterLevel(bool bOffset, int XCor, int YCor,LPDIRECTDRAWSURFAC
    }
 };
 
+// May be useful for 32 FPS @PoPo
 void TileSet::CompileView(int Direction) {
 /* This fucntion draw all the land type.
  * Time critical function.

@@ -53,7 +53,7 @@ void Spell::LoadSpell(int f, char *Name, int p) {
    MaxxCor = 0;
    MaxyCor = 0;
 
-
+   //Spell Frames - 32 fps?
    SpellAnim = new CV2Sprite [Faces];
 
    for (int i = 0; i < Faces; i++) {

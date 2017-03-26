@@ -7013,8 +7013,8 @@ void VisualObjectList::Create(void)
     MainObject.Chose = 0;
     MainObject.DrawOverlap = TRUE;
     
-    MainObject.nbSprite4Move = 1*FRAMING;
-    MainObject.nbSprite4Att = 1*FRAMING;
+    MainObject.nbSprite4Move = 1*FRAMING32; // 32 FPS @PoPo
+    MainObject.nbSprite4Att = 1*FRAMING32; // 32 FPS
     
     //**NMNMNM --[Change visible Area range] Old (15,20)
     //SetRange(21, 29); //21,//29
@@ -7148,8 +7148,8 @@ void VisualObjectList::Add(unsigned long ID, unsigned short Type, unsigned short
         Object->Temp = timeGetTime();
         Object->IdentifyTemp = timeGetTime();
         Object->Slow = 2;
-        Object->nbSprite4Move = 1*FRAMING;
-        Object->nbSprite4Att = 1*FRAMING;
+        Object->nbSprite4Move = 1*FRAMING32; // 32 FPS Spells @PoPo
+        Object->nbSprite4Att = 1*FRAMING32; // 32 FPS Spells
         Object->Name = 0;
         Object->Up = 0;
         Object->Down = 0;
@@ -14271,8 +14271,8 @@ void VisualObjectList::DrawObject(int XCor, int YCor, bool Draw, LPDIRECTDRAWSUR
                      
                      
                      else if (Object->Type == __OBJGROUP_FIRECAMP && MultiPass == 1) {
-                        
-                        GetVSFObject((Object->Faces/2 % Object->Anim) + __OBJGROUP_FIRECAMP)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
+                        //32 FPS @PoPo
+                        GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + __OBJGROUP_FIRECAMP)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         Object->Faces++;
                         if (Object->DrawOverlap)
                            Object->Overlap.DrawSprite(((Object->OX+ViewWidth)<<5)+XCor, ((Object->OY+ViewHeight)<<4)+YCor, Clip, NULL, NULL, lpBlitSurface);
@@ -14285,12 +14285,12 @@ void VisualObjectList::DrawObject(int XCor, int YCor, bool Draw, LPDIRECTDRAWSUR
                         World.Restore();
                      } 
                      else if (Object->Type == __OBJGROUP_TORCHE || Object->Type == __OBJGROUP_PORTAL || Object->Type == __OBJGROUP_CAULDRON_CONTAINER &&MultiPass == 1) 
-                     {
-                        GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX-10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
+                     {//32 FPS @PoPo
+                        GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX-10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         x = ((Object->OX+ViewWidth)<<5)+XCor+Object->MovX;
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
-                        x += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCX();
-                        y += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCY();
+                        x += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCX();
+                        y += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCY();
                         lmTorchLight.MergeLightMap((x-80-65)>>1, (y-40)>>1);
                         Object->Faces++;
                         if (Object->Type == __OBJGROUP_PORTAL || Object->Type == __OBJGROUP_CAULDRON_CONTAINER)
@@ -14335,13 +14335,13 @@ void VisualObjectList::DrawObject(int XCor, int YCor, bool Draw, LPDIRECTDRAWSUR
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
                         lmTorchChandelle2.MergeLightMap((x-65)>>1, (y-125)>>1);                        
                      }
-                     
+                     //32 FPS @PoPo
                      else if (Object->Type == __OBJGROUP_CAULDRON /*|| Object->Type == __OBJGROUP_CAULDRON_CONTAINER*/&& MultiPass == 1) {
                         GetVSFObject((Object->Faces % Object->Anim) + Object->Type)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         x = ((Object->OX+ViewWidth)<<5)+XCor+Object->MovX;
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
-                        x += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCX();
-                        y += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCY();
+                        x += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCX();
+                        y += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCY();
                         lmTorchLight.MergeLightMap((x-80-65)>>1, (y-40)>>1);
                         Object->Faces++;
                         //               Object->Dynamic = true;
@@ -14395,19 +14395,19 @@ void VisualObjectList::DrawObject(int XCor, int YCor, bool Draw, LPDIRECTDRAWSUR
                         Object->Type == __OBJGROUP_SHOP_ARMOR ||
                         Object->Type == __OBJGROUP_SHOP_WEAPON && 
                         MultiPass == 1) {
-                        int n = (Object->Faces/2);
+                        int n = (Object->Faces/(2*FRAMING32)); //32 FPS @PoPo
                         if (n >= Object->Anim) {
                            n = 0;
                            if (!(rand() % 1000)) {
                               Object->Faces = 0;
                            }
                         }
-                        
+                        // 32 FPS @PoPo
                         GetVSFObject(n + Object->Type)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX-10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         x = ((Object->OX+ViewWidth)<<5)+XCor+Object->MovX;
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
-                        x += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCX();
-                        y += GetVSFObject((Object->Faces/2 % Object->Anim) + Object->Type)->GetCY();
+                        x += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCX();
+                        y += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type)->GetCY();
                         Object->Faces++;
                         if (Object->DrawOverlap)
                            Object->Overlap.DrawSprite(((Object->OX+ViewWidth)<<5)+XCor, ((Object->OY+ViewHeight)<<4)+YCor, Clip, NULL, NULL, lpBlitSurface);
@@ -14420,32 +14420,32 @@ void VisualObjectList::DrawObject(int XCor, int YCor, bool Draw, LPDIRECTDRAWSUR
                         MultiPass == 1) {
                         
                         
-                        int n = (Object->Faces/2);
+                        int n = (Object->Faces/(2*FRAMING32));
                         if (n >= Object->Anim) {
                            n = 0;
                            if (!(rand() % 1000)) {
                               Object->Faces = 0;
                            }
-                        }
+                        }//32 FPS @PoPo
                         // Flipped image, use a mirrored CV2Sprite sprite and type -1.
                         int Type = Object->Type - 1;
                         VsfFX->dwFX |= FX_LEFTRIGHTMIRROR;
                         GetVSFObject(n + Type)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX-10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         x = ((Object->OX+ViewWidth)<<5)+XCor+Object->MovX;
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
-                        x += GetVSFObject((Object->Faces/2 % Object->Anim) + Type)->GetCX();
-                        y += GetVSFObject((Object->Faces/2 % Object->Anim) + Type)->GetCY();
+                        x += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Type)->GetCX();
+                        y += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + Type)->GetCY();
                         Object->Faces++;
                         if (Object->DrawOverlap)
                            Object->Overlap.DrawSprite(((Object->OX+ViewWidth)<<5)+XCor, ((Object->OY+ViewHeight)<<4)+YCor, Clip, NULL, NULL, lpBlitSurface);
                         World.Restore();
                      } else if (Object->Type == __OBJGROUP_TORCHE_I && MultiPass == 1) {
                         VsfFX->dwFX |= FX_LEFTRIGHTMIRROR;
-                        GetVSFObject((Object->Faces/2 % Object->Anim) + __OBJGROUP_TORCHE)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX+10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
+                        GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + __OBJGROUP_TORCHE)->DrawSpriteN(((Object->OX+ViewWidth)<<5)+XCor+Object->MovX+10, ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY, VsfFX);
                         x = ((Object->OX+ViewWidth)<<5)+XCor+Object->MovX;
                         y = ((Object->OY+ViewHeight)<<4)+YCor+Object->MovY;
-                        x += GetVSFObject((Object->Faces/2 % Object->Anim) + __OBJGROUP_TORCHE)->GetCX();
-                        y += GetVSFObject((Object->Faces/2 % Object->Anim) + __OBJGROUP_TORCHE)->GetCY();
+                        x += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + __OBJGROUP_TORCHE)->GetCX();
+                        y += GetVSFObject((Object->Faces/(2*FRAMING32) % Object->Anim) + __OBJGROUP_TORCHE)->GetCY();
                         lmTorchLight.MergeLightMap((x-80-65)>>1, (y-40)>>1);
                         Object->Faces++;
                         //               Object->Dynamic = true;
@@ -15711,7 +15711,7 @@ void VisualObjectList::DrawObjectAnim(int XCor, int YCor, bool Draw, LPDIRECTDRA
                         //On dessine la fontaine...
                         int dwLoopFrame;
                         //if(Object->Type == __OBJANIM_FONTAIN_02)
-                           dwLoopFrame = (Object->Faces/2 % Object->Anim) + Object->Type;
+                           dwLoopFrame = (Object->Faces/(2*FRAMING32) % Object->Anim) + Object->Type;
                         //else
                         //   dwLoopFrame = (Object->Faces % Object->Anim) + Object->Type;
 
@@ -16189,7 +16189,7 @@ void VisualObjectList::Anim(unsigned long ID, char Type) {
             Object = GetObject();
             if (Object->ID == ID) {
                 Object->Chose = 1; // Type
-                Object->Speed = 0;
+                Object->Speed = 0; // @PoPo
                 Object->AttFrame = 0;
                 Object->AttSpeed = 0;
             }
@@ -16566,7 +16566,7 @@ void VisualObjectList::SetSet(BOOL kP) {
     if (Set == 71)
         VObject3D[Set]->SetPuppet(&MainObject);
     MainObject.SpriteNumber = 1;
-    MainObject.SpriteMove = 1;
+    MainObject.SpriteMove = 1; //@PoPo
     
     Overlap.Release(); 
     //:CR_NMNMNM  Player overlap Size...

@@ -24,10 +24,10 @@ Publish 1:
   - [x] Spells
   - [x] Animated Statics>>Fountains, Torches etc
   - [ ] Darkfang
-- [ ] Larger resolution native support
-  - [ ] 1280x720
-  - [ ] 1600x900
-  - [ ] 1920x1080
+- [x] Larger resolution native support
+  - [ ] 1280x720 (chatbox bug remains)
+  - [x] 1600x900
+  - [x] 1920x1080
 - [ ] Client>>Server Encryption
 - [ ] 32-bit Display Integration
 - [ ] Full DX9 conversion (currently in dx8 w/ DirectDraw)

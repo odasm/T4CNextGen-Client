@@ -17,9 +17,17 @@ Roadmap:
 
 
 Publish 1:
-- [x] Webpatch working
+- [x] Webpatcher Functional
 - [ ] 16 and 32 FPS - animations syncronization
+  - [x] Players and NPCs
+  - [x] Monsters
+  - [x] Spells
+  - [x] Animated Statics>>Fountains, Torches etc
+  - [ ] Darkfang
 - [ ] Larger resolution native support
+  - [ ] 1280x720
+  - [ ] 1600x900
+  - [ ] 1920x1080
 - [ ] Client>>Server Encryption
-- [ ] 32bit Display Integration
+- [ ] 32-bit Display Integration
 - [ ] Full DX9 conversion (currently in dx8 w/ DirectDraw)

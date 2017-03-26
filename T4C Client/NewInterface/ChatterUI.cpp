@@ -254,8 +254,8 @@ ChatterUI::ChatterUI( void )
 	// by PoPo modified to be equal 0 for a default resolution 1920 with 1912px sprite
 	//int dwOffset = 729+8-(g_Global.GetScreenW()-287);
 	//dwOffset*=-1;
-	int dwOffset = 1625 + 8 - (g_Global.GetScreenW() - 287);
-	dwOffset *= -1;
+	int dwOffset = 1625+8-(g_Global.GetScreenW()-287);
+	dwOffset*=-1;
 
     textInput.EnableCursor( true );
     textInput.SetPos( FramePos( 40,g_Global.GetScreenH()-28, dwOffset+8+737-48-48, g_Global.GetScreenH()-8 ) );

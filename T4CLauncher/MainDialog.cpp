@@ -315,24 +315,8 @@ BOOL CMainDialog::OnInitDialog()
    s += "</font><br><br><br>";
    s += "<font color='200,200,200' size='20' face='Arial' style='b' style='u'>About</font><br><br>";
    s += "<font color='200,200,200' size='14' face='Arial'>(T4C)The 4th Coming <br>Copyright © Dialsoft </font>";
-   //s += "<br><img src='#%d'><br><br>";
-   //s += "<font color='200,200,200' size='14' face='Arial'>(T4C)The 4th Coming</font><font color='230,50,10' size='16' style='b'> V2</font><font color='200,200,200' size='14'><br>Created with original T4C Sources and Copyright © Dialsoft </font>";
    s += "<br><br><img src='#%d'><br><br><br>";
-      // Credit Zone...
-
-   s += "<font color='200,200,200' size='20' face='Arial' style='b' style='u'>==T4C Rebirth Project Team==</font><br><br>"; // steph
-	// -- 1.6 Coordination Unit-- // steph
-   s += "<font color='200,200,200' size='16' face='Arial' style='b' >--1.68V2 Coordination Unit--</font><br>"; // steph
-   s += "<font color='200,200,200' size='14' face='Arial'>"; // steph
-   s += "Henry, Project Leader<br>"; // steph
-   s += "Shainon, Steph, Coders Leader<br>"; // steph ajout de Steph
-   s += "<br></font><br><br>"; // steph
-	// -- 1.6 Coding Unit-- // steph
-   s += "<font color='200,200,200' size='16' face='Arial' style='b' >--1.68V2 Coding Unit--</font><br>"; // steph
-   s += "<font color='200,200,200' size='14' face='Arial'>"; // steph
-   s += "Shainon, Steph, Core, Interface && Security Coders Leader<br>"; // steph ajout de Steph
-   s += "<br></font><br><br>"; // steph
-
+   // Credit Zone...
 
    s += "<font color='200,200,200' size='20' face='Arial' style='b' style='u'>==T4C V2.0 Project Team==</font><br><br>";
 

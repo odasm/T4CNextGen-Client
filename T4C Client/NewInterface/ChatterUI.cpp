@@ -270,7 +270,7 @@ ChatterUI::ChatterUI( void )
     channelToggleButton.SetDownUI( "GUI_MinChatBtnInChatDown" );
     channelToggleButton.SetHighlightUI( "GUI_MinChatBtnInChatHUp" );
     channelToggleButton.Hide();
-        
+
     ingameToggleButton.SetSpriteId( "GUI_MinChatBtnInGameUp");
     ingameToggleButton.SetPos( FramePos( 8, g_Global.GetScreenH()-33, 32, g_Global.GetScreenH()-8) );
     ingameToggleButtonEvent.SetUI( this );

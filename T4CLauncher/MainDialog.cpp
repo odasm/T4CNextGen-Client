@@ -181,8 +181,8 @@ BOOL CMainDialog::OnInitDialog()
    m_staticLinkWeb1.SetFont3D(TRUE,uicLabel::Type3D::Sunken); // steph ajout
    m_staticLinkWeb1.SetCenter(TRUE); // steph ajout
    m_staticLinkWeb1.SetLinkEffect(TRUE,IDC_LINK_CURSOR,TRUE); // steph ajout
-   m_staticLinkWeb1.SetText("Shop"); // steph ajout
-   m_staticLinkWeb1.SetTextLink("https://t4c-rebirth.com/shop.php"); // steph ajout
+   m_staticLinkWeb1.SetText("GitHub"); // steph ajout
+   m_staticLinkWeb1.SetTextLink("https://github.com/PoPoWanObi/T4CNextGen-Client"); // steph ajout
 
    m_staticLinkWeb2.SetFontBold(TRUE); // steph ajout
    m_staticLinkWeb2.SetFontName("Arial"); // steph ajout
@@ -191,8 +191,8 @@ BOOL CMainDialog::OnInitDialog()
    m_staticLinkWeb2.SetFont3D(TRUE,uicLabel::Type3D::Sunken); // steph ajout
    m_staticLinkWeb2.SetCenter(TRUE); // steph ajout
    m_staticLinkWeb2.SetLinkEffect(TRUE,IDC_LINK_CURSOR,TRUE); // steph ajout
-   m_staticLinkWeb2.SetText("RPG Paradize"); // steph ajout
-   m_staticLinkWeb2.SetTextLink("http://www.rpg-paradize.com/?page=vote&vote=107434"); // steph ajout
+   m_staticLinkWeb2.SetText("Bug Reports"); // steph ajout
+   m_staticLinkWeb2.SetTextLink("https://github.com/PoPoWanObi/T4CNextGen-Client/issues"); // steph ajout
 
    m_staticConnectGeneral.SetFontBold(TRUE);
    m_staticConnectGeneral.SetFontName("Arial");
